@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rujhaann - Seni Arsitektur untuk Kehidupan yang Lebih Baik</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Chart.js untuk Grafik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Styles untuk Sentuhan Mewah */
+        :root {
+            --gold-accent: #d4af37;
+            --dark-bg: #111827;
+            --light-text: #f3f4f6;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .text-gold {
+            color: var(--gold-accent);
+        }
+        
+        .bg-gold {
+            background-color: var(--gold-accent);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+        }
+
+        /* Animasi untuk counter */
+        .counter {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ========== NAVIGATION ========== -->
+    <header class="absolute top-0 w-full z-50 bg-transparent">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-white">Rujhaann</a>
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href="#beranda" class="hover:text-gold transition duration-300">Beranda</a>
+                <a href="#tentang" class="hover:text-gold transition duration-300">Tentang</a>
+                <a href="#layanan" class="hover:text-gold transition duration-300">Layanan</a>
+                <a href="#portofolio" class="hover:text-gold transition duration-300">Portofolio</a>
+                <a href="#kontak" class="hover:text-gold transition duration-300">Kontak</a>
+            </div>
+            <a href="#kontak" class="hidden md:block bg-gold text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition duration-300">
+                Konsultasi Gratis
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 text-white">
+            <div class="px-6 pt-2 pb-3 space-y-1">
+                <a href="#beranda" class="block py-2 hover:text-gold">Beranda</a>
+                <a href="#tentang" class="block py-2 hover:text-gold">Tentang</a>
+                <a href="#layanan" class="block py-2 hover:text-gold">Layanan</a>
+                <a href="#portofolio" class="block py-2 hover:text-gold">Portofolio</a>
+                <a href="#kontak" class="block py-2 hover:text-gold">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== HERO SECTION ========== -->
+        <section id="beranda" class="relative h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070'); background-size: cover; background-position: center;">
+            <div class="hero-overlay absolute inset-0"></div>
+            <div class="relative z-10 text-center text-white px-6" data-aos="fade-up" data-aos-duration="1500">
+                <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4">Rujhaann</h1>
+                <p class="text-xl md:text-2xl font-light mb-8">Seni Arsitektur untuk Kehidupan yang Lebih Baik</p>
+                <div class="space-x-4">
+                    <a href="#portofolio" class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300">Jelajahi Karya Kami</a>
+                    <a href="#ai-quiz" class="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition duration-300">Coba Gaya AI Kami</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TENTANG KAMI (DENGAN STATISTIK) ========== -->
+        <section id="tentang" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">Mewujudkan Ruang Impian yang Abadi</h2>
+                        <p class="text-gray-600 mb-4">Di Rujhaann, kami tidak hanya membangun struktur, kami menciptakan pengalaman. Setiap garis, setiap material, dan setiap detail dirancang dengan presisi dan keahlian untuk mencerminkan kepribadian dan aspirasi Anda.</p>
+                        <p class="text-gray-600">Dengan pendekatan yang personal dan berorientasi pada inovasi, kami mengubah visi Anda menjadi sebuah mahakarya arsitektur yang elegan dan fungsional.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 text-center" data-aos="fade-left">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="font-serif text-4xl font-bold text-gold counter" data-target="50">0</h3>
+                            <p class="text-gray-600 mt-2">Proyek Mewah</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="font-serif text-4xl font-bold text-gold counter" data-target="15">0</h3>
+                            <p class="text-gray-600 mt-2">Tahun Pengalaman</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="font-serif text-4xl font-bold text-gold counter" data-target="98">0</h3>
+                            <p class="text-gray-600 mt-2">% Klien Puas</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="font-serif text-4xl font-bold text-gold counter" data-target="12">0</h3>
+                            <p class="text-gray-600 mt-2">Penghargaan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== LAYANAN ========== -->
+        <section id="layanan" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Layanan Unggulan Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Solusi arsitektur komprehensif yang disesuaikan untuk setiap kebutuhan dan gaya hidup Anda.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-drafting-compass text-4xl text-gold mb-4"></i>
+                        <h3 class="font-serif text-2xl font-semibold mb-3">Desain Arsitektur</h3>
+                        <p class="text-gray-600">Konsep dan desain bangunan yang inovatif, fungsional, dan estetis dari awal hingga siap dibangun.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fas fa-couch text-4xl text-gold mb-4"></i>
+                        <h3 class="font-serif text-2xl font-semibold mb-3">Desain Interior</h3>
+                        <p class="text-gray-600">Merancang ruang interior yang nyaman, harmonis, dan mencerminkan karakter unik penghuninya.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fas fa-hard-hat text-4xl text-gold mb-4"></i>
+                        <h3 class="font-serif text-2xl font-semibold mb-3">Pengawasan Proyek</h3>
+                        <p class="text-gray-600">Memastikan setiap tahap pembangunan berjalan sesuai rencana, kualitas, dan waktu yang telah ditetapkan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PORTOFOLIO ========== -->
+        <section id="portofolio" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">Mahakarya Kami</h2>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Setiap proyek adalah cerita tentang kolaborasi, inovasi, dan dedikasi untuk mencapai kesempurnaan.</p>
+                
+                <!-- Filter Buttons -->
+                <div class="flex justify-center space-x-4 mb-10" data-aos="fade-up" data-aos-delay="150">
+                    <button class="filter-btn active bg-gold text-black px-6 py-2 rounded-full" data-filter="all">Semua</button>
+                    <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gold hover:text-black transition" data-filter="residensial">Residensial</button>
+                    <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gold hover:text-black transition" data-filter="komersial">Komersial</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="portfolio-item residensial overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070" alt="Villa Modern" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-semibold mb-2">Villa Puncak Sejuk</h3>
+                            <p class="text-gray-600">Gaya Modern Tropis</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item komersial overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070" alt="Kantor Elegan" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-semibold mb-2">Kantor Pusat Karya</h3>
+                            <p class="text-gray-600">Gaya Minimalis Industrial</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item residensial overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2070" alt="Rumah Mewah" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-semibold mb-2">Rumah Taman Anggrek</h3>
+                            <p class="text-gray-600">Gaya Klasik Modern</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== AI STYLE QUIZ (FITUR HITS) ========== -->
+        <section id="ai-quiz" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Temukan Gaya Arsitektur Anda</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">Bingung memilih gaya? Coba kuis interaktif bertenaga AI kami untuk menemukan desain yang paling cocok dengan kepribadian Anda.</p>
+                <button class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300" data-aos="fade-up" data-aos-delay="200" onclick="alert('Fitur AI Style Quiz akan segera hadir! Ini akan mengarahkan pengguna melalui serangkaian pertanyaan visual untuk menemukan gaya mereka.')">
+                    <i class="fas fa-magic mr-2"></i> Mulai Kuis AI
+                </button>
+            </div>
+        </section>
+        
+        <!-- ========== DASHBOARD PREVIEW (MANAJEMEN OTOMATIS) ========== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">Sistem Manajemen Cerdas Kami</h2>
+                <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Kami menggunakan sistem internal yang didukung AI untuk memantau kinerja, mengelola proyek, dan memberikan transparansi penuh kepada klien melalui portal pribadi. Berikut adalah contoh grafik penjualan real-time kami.</p>
+                
+                <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-xl" data-aos="zoom-in">
+                    <h3 class="font-serif text-2xl font-semibold mb-6 text-center">Grafik Penjualan & Pipeline Proyek</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== KONTAK ========== -->
+        <section id="kontak" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">Mari Wujudkan Impian Anda</h2>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Hubungi kami hari ini untuk konsultasi gratis dan mulai perjalanan Anda menuju ruang impian.</p>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div data-aos="fade-right">
+                        <h3 class="font-serif text-2xl font-semibold mb-6">Kirim Kami Pesan</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Nama Lengkap" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-gold">
+                            <input type="email" placeholder="Email Aktif" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-gold">
+                            <textarea placeholder="Ceritakan tentang proyek Anda..." rows="5" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-gold"></textarea>
+                            <button type="submit" class="w-full bg-gold text-black py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300">Kirim Pesan</button>
+                        </form>
+                    </div>
+                    <div data-aos="fade-left">
+                        <h3 class="font-serif text-2xl font-semibold mb-6">Informasi Kontak</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-gold text-xl w-8"></i>
+                                <p>Jl. Tegal Talang No. 88, Langgen, Tegal, Indonesia</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-gold text-xl w-8"></i>
+                                <p>+62 812-3456-7890</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-gold text-xl w-8"></i>
+                                <p>hello@rujhaann.com</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/rujhaann" target="_blank" class="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gold transition"><i class="fab fa-instagram-f"></i></a>
+                                <a href="#" class="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gold transition"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gold transition"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Rujhaann Architecture. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+    <a href="#" onclick="openWhatsApp()" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-40">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            once: true // Animasi hanya terjadi sekali
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Portfolio Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-gold', 'text-black');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+
+                // Add active class to clicked button
+                button.classList.add('active', 'bg-gold', 'text-black');
+                button.classList.remove('bg-gray-200', 'text-gray-700');
+
+                const filter = button.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // WhatsApp Integration
+        function openWhatsApp() {
+            const phoneNumber = "6281234567890"; // Ganti dengan nomor WA Anda
+            const message = "Halo Rujhaann, saya tertarik untuk berkonsultasi tentang proyek arsitektur.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const runCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => runCounter(counter), 10);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        // Using Intersection Observer to trigger counter animation
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Chart.js Implementation
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'line', // Tipe grafik: garis
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul'],
+                datasets: [{
+                    label: 'Nilai Proyek (dalam Juta)',
+                    data: [120, 190, 150, 250, 220, 380, 350],
+                    borderColor: 'rgba(212, 175, 55, 1)', // Warna emas
+                    backgroundColor: 'rgba(212, 175, 55, 0.2)', // Warna emas transparan
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4 // Membuat garis melengkung
+                }, {
+                    label: 'Proyek Ditutup',
+                    data: [2, 3, 2, 4, 3, 5, 4],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    yAxisID: 'y1', // Menggunakan sumbu Y kedua
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Nilai Proyek (Juta)'
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Jumlah Proyek'
+                        },
+                        grid: {
+                            drawOnChartArea: false, // Hanya menampilkan grid untuk sumbu Y utama
+                        },
+                    },
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
